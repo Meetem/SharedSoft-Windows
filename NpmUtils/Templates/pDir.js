@@ -1,6 +1,9 @@
 var fs = require('fs');
 const format = require('string-format');
+const util = require('util');
+const execFile = util.promisify(require('child_process').execFile);
 const split = require('split-string');
+
 format.extend(String.prototype, {})
 
 function read(filePath, encoding = 'utf8'){
@@ -14,11 +17,16 @@ function write(path, data, mode = 'w', encoding = 'utf8'){
     });
 }
 
-var inputPath = 'file.txt';
-var outputPath = 'outFile.txt';
+var folder = '';
+var files = fs.readdirSync(folder);
 
-var data = read(inputPath);
+files.forEach(element => {
+    console.log('File: ' + element);
+});
 
-//TODO Process data somehow
+async function getVersion() {
+  const { stdout } = await execFile('node', ['--version']);
+  console.log(stdout);
+}
 
-write(outputPath, data);
+getVersion();

@@ -1,5 +1,6 @@
 var fs = require('fs');
 const format = require('string-format');
+const split = require('split-string');
 format.extend(String.prototype, {})
 
 function read(filePath, encoding = 'utf8'){

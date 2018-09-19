@@ -1,6 +1,8 @@
 var fs = require('fs');
 const format = require('string-format');
-const split = require('split-string');
+const util = require('util');
+const execFile = util.promisify(require('child_process').execFile);
+
 format.extend(String.prototype, {})
 
 function read(filePath, encoding = 'utf8'){
@@ -14,11 +16,9 @@ function write(path, data, mode = 'w', encoding = 'utf8'){
     });
 }
 
-var inputPath = 'file.txt';
-var outputPath = 'outFile.txt';
+async function getVersion() {
+  const { stdout } = await execFile('node', ['--version']);
+  console.log(stdout);
+}
 
-var data = read(inputPath);
-
-//TODO Process data somehow
-
-write(outputPath, data);
+getVersion();
