@@ -14,7 +14,7 @@ CALL :SetPathIfNot "%BATCHPATH%\ffmpeg"
 CALL :SetPathIfNot "%BATCHPATH%\NpmUtils"
 
 CALL :SetPathIfNot "%BATCHPATH%\ScriptCs"
-
+CALL :SetPathIfNot "%BATCHPATH%\CSharpUtils"
 
 
 REM ENDHERE
