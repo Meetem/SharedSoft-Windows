@@ -1,0 +1,11 @@
+{
+  "name": "ffmpeg-seq-utils",
+  "version": "0.0.1",
+  "description": "FFmpeg utils for sequnce (minframe resolving e.t.c)",
+  "main": "index.js",
+  "scripts": {
+    "test": "frameNumberString('fileName_0001.png')"
+  },
+  "author": "",
+  "license": "ISC"
+}

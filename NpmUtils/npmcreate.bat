@@ -1,5 +1,6 @@
 @echo OFF
 set BATCHPATH=%~dp0
+SETLOCAL ENABLEDELAYEDEXPANSION
 
 IF "%1" == "templates" (
 	for /d %%D in ("%BATCHPATH%Templates\*") do (
@@ -42,8 +43,22 @@ if exist %TEMPLATEFILE% (
     set TEMPLATEFILE=%BATCHPATH%Templates\default\
 )
 
-for /F "tokens=*" %%A in ("%TEMPLATEFILE%\packagesList.txt") do (
-	call npm install %%A
+for /F "tokens=*" %%A in (%TEMPLATEFILE%\packagesList.txt) do (
+	Echo.%%A | findstr /C:"//" > nul && (
+		REM COMMENT
+	) || (
+		Echo.%%A | findstr /C:"local:" > nul && (
+			set PKG=%%A
+			set PKG=!PKG:~6!
+			set PKG=%BATCHPATH%LocalPackages\!PKG!
+			echo Local !PKG!
+			call npm install !PKG!
+		) || (
+			set PKG=%%A
+			echo Global !PKG!
+			call npm install !PKG!
+		)
+	)
 )
 
 xcopy "%TEMPLATEFILE%" "%cd%"

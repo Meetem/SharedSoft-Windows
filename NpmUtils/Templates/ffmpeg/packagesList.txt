@@ -1,3 +1,4 @@
 string-format
 split-string
 async-foreach
+local:ffmpeg-seq-utils
