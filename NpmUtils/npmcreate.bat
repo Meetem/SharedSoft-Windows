@@ -2,6 +2,7 @@
 set BATCHPATH=%~dp0
 SETLOCAL ENABLEDELAYEDEXPANSION
 
+
 IF "%1" == "templates" (
 	for /d %%D in ("%BATCHPATH%Templates\*") do (
 		echo Template %%~nD
@@ -29,7 +30,7 @@ Echo.%RELDIR% | findstr /C:":\\" > nul && (
 )
 
 mkdir "%ABSPATH%"
-cd "%ABSPATH%"
+cd /D "%ABSPATH%"
 
 call npm init -y
 
