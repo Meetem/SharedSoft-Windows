@@ -9,4 +9,4 @@ echo ''
 echo Writing to: %ArchName%
 echo ''
 
-"C:\Program Files\7-Zip\7z.exe" a -aoa -r -mmt4 -mx5 %ArchName% "%1"
+"C:\Program Files\7-Zip\7z.exe" a -aoa -r -mmt4 -mx5 "%ArchName%" "%1"

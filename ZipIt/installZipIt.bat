@@ -17,4 +17,10 @@ echo @="Zip Unity &Shallow" >> zipIt.reg
 echo [HKEY_CLASSES_ROOT\Directory\shell\ubuilds\command] >> zipIt.reg
 echo @="\"%mystring%zipShallow.bat\" \"%%1\"" >> zipIt.reg
 
+echo [HKEY_CLASSES_ROOT\Directory\shell\ubuildz] >> zipIt.reg
+echo @="Zip Unity &Scripts" >> zipIt.reg
+
+echo [HKEY_CLASSES_ROOT\Directory\shell\ubuildz\command] >> zipIt.reg
+echo @="\"%mystring%zipScripts.bat\" \"%%1\"" >> zipIt.reg
+
 start zipIt.reg

@@ -11,5 +11,5 @@ echo Writing to: %ArchName%
 echo 
 
 DEL /S /Q "%ArchName%"
-"C:\Program Files\7-Zip\7z.exe" a -aoa -r -mmt4 -mx5 -xr!Plugins -x!System.* -x!UnityEngine.* -x!mscorlib.dll -x!DOTween* "%ArchName%" "%LastDir%"
+"C:\Program Files\7-Zip\7z.exe" a -aoa -r -mmt4 -mx5 -x!System.* -x!UnityEngine.* -x!mscorlib.dll -x!DOTween* "%ArchName%" "%LastDir%\Managed"
 pause

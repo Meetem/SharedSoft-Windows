@@ -7,3 +7,7 @@ Windows Registry Editor Version 5.00
 @="Zip Unity &Shallow" 
 [HKEY_CLASSES_ROOT\Directory\shell\ubuilds\command] 
 @="\"C:\\Users\\alex\\Documents\\GitHub\\SharedSoft-Windows\\ZipIt\\zipShallow.bat\" \"%1\"" 
+[HKEY_CLASSES_ROOT\Directory\shell\ubuildz] 
+@="Zip Unity S&cripts" 
+[HKEY_CLASSES_ROOT\Directory\shell\ubuildz\command] 
+@="\"C:\\Users\\alex\\Documents\\GitHub\\SharedSoft-Windows\\ZipIt\\zipScripts.bat\" \"%1\"" 
